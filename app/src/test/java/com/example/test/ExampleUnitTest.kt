@@ -1,4 +1,4 @@
-package org.study_iu.noto
+package com.example.test
 
 import org.junit.Test
 

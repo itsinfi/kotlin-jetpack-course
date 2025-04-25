@@ -1,4 +1,4 @@
-package org.study_iu.noto
+package com.example.test
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("org.study_iu.noto", appContext.packageName)
+        assertEquals("com.example.test", appContext.packageName)
     }
 }

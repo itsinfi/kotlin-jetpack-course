@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.study_iu.noto"
+    namespace = "com.example.test"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "org.study_iu.noto"
+        applicationId = "com.example.test"
         minSdk = 34
         targetSdk = 35
         versionCode = 1

@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Noto"
+rootProject.name = "test"
 include(":app")
+ 
