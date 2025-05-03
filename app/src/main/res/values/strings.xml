@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Noto</string>
+    <string name="title_activity_create_note">CreateNote</string>
 </resources>

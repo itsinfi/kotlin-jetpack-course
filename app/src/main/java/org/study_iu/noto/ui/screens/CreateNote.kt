@@ -1,4 +1,4 @@
-package org.study_iu.noto
+package org.study_iu.noto.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,22 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import org.study_iu.noto.ui.screens.CreateNote
-import org.study_iu.noto.ui.theme.NotoTheme
-import androidx.compose.material3.ElevatedButton
-import androidx.compose.ui.platform.LocalContext
-import android.content.Intent
+import org.study_iu.noto.ui.screens.ui.theme.NotoTheme
 
-
-
-class MainActivity : ComponentActivity() {
+class CreateNote : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             NotoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    Greeting2(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -37,29 +31,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting2(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
     )
-    val context = LocalContext.current
-    ElevatedButton(
-        onClick = {
-            val intent = Intent(context, CreateNote::class.java)
-            context.startActivity(intent)
-        }
-    ) {
-        Text(
-            text = "Create Note",
-            modifier = modifier
-        )
-    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     NotoTheme {
-        Greeting("new message")
+        Greeting2("Android")
     }
 }
