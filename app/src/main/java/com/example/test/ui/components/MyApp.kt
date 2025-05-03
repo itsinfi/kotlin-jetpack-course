@@ -22,7 +22,7 @@ fun MyApp(
     names: List<String> = listOf("Kotlin", "Jetpack Compose", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
 ) {
 
-    var shoulShowOnboarding by remember { mutableStateOf(true) }
+    val shouldShowOnboarding by remember { mutableStateOf(false) }
 
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         if (shoulShowOnboarding) {
