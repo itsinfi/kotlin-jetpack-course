@@ -1,7 +1,6 @@
 package com.example.test.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,8 +22,9 @@ import com.example.test.ui.theme.TestTheme
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+
     var isExpanded by remember { mutableStateOf(false) }
-    var extraPadding = if (isExpanded) 72.dp else 0.dp
+    val extraPadding = if (isExpanded) 72.dp else 0.dp
 
     Surface(
         modifier = modifier.padding(top = 24.dp),
