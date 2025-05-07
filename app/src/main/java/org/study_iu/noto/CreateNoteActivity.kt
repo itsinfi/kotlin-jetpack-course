@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.study_iu.noto.ui.theme.NotoTheme
+import org.study_iu.noto.MainActivity
 
 /**
  * Asks the user to create a note and saves it. The result is

@@ -32,7 +32,12 @@ class MainActivity : ComponentActivity() {
         if (result.resultCode == Activity.RESULT_OK) {
             val note = result.data?.getStringExtra("note")
 
-            // TODO: update the ui; see the structure of the result inside the logs
+            if (!note.isNullOrBlank()) {
+                // Starte ViewNotes und übergebe die Notiz
+                val intent = Intent(this, ViewNotes::class.java)
+                intent.putExtra("note", note)
+                startActivity(intent)
+            }
             println("Note received: $note")
         }
     }
