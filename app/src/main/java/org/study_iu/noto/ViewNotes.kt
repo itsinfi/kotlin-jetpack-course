@@ -1,5 +1,6 @@
 package org.study_iu.noto
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,14 @@ import androidx.compose.material3.Card
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.LocalActivity
+import androidx.compose.material3.Button
 import org.study_iu.noto.ui.theme.NotoTheme
+import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.platform.LocalContext
 
 
 class ViewNotes : ComponentActivity() {
@@ -37,23 +45,34 @@ class ViewNotes : ComponentActivity() {
     }
 
     @Composable
-    fun ViewNote(note: String, modifier : Modifier = Modifier) {
-        Card(
-            modifier = modifier
-                .fillMaxWidth()
-                .padding(vertical = 80.dp, horizontal = 8.dp)
-        ) {
-            Column {
-                Text(
-                    text = "Notiz",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = note,
-                    fontSize = 16.sp
-                )
+    fun ViewNote(note: String, modifier: Modifier = Modifier) {
+        val activity = LocalActivity.current
+
+        Scaffold(
+            floatingActionButton = {
+                ElevatedButton(onClick = { activity?.finish() }) {
+                    Text("Go Back")
+                }
+            }
+        ) { innerPadding ->
+            Card(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(top = 80.dp, start = 8.dp, end = 8.dp)
+                    .padding(innerPadding)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = "Notiz",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = note,
+                        fontSize = 16.sp
+                    )
+                }
             }
         }
     }
